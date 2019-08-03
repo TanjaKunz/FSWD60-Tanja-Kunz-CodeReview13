@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="col-12"><a class="btn btn-outline-info mb-4" href="/">Back to Home</a></div>
+
+	<h2 class="col-12 page-header">{{event.name}}</h2>
+	<p class="col-12"><strong> {{event.dateTime|date('F j, Y, g:i a')}} </strong></p>
+	<hr>
+
+	<div class="col-12">
+		<img class="img-fluid" src="{{ event.image }}">
+	</div>
+	
+	<p class="col-12 mt-4">{{event.description}}</p>
+	<div class="col-12 h5"><strong>Place</strong></div>
+	<div class="col-12">{{event.street}}</div>
+	<div class="col-12">{{event.city}}</div>
+
+	<div class="col-12 h5 mt-4 mb-3"><strong>Information and Contact</strong></div>
+	<div>
+		<div class="col-12"><strong>Type: </strong>{{event.type}}</div>
+		<div class="col-12"><strong>Capacity: </strong>{{event.capacity}}</div>
+		<hr>
+		<div class="col-12"><strong>web: </strong><a href="{{event.url}}">Homepage</div></a>
+		<div class="col-12"><strong>Phone: </strong>{{event.phoneNumber}}</div>
+		<div class="col-12"><strong>Email: </strong>{{event.email}}</div>
+	</div>
+{% endblock %}
